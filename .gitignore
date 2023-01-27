@@ -1,1 +1,4 @@
 .ipynb_checkpoints
+.venv
+bjj_fighters.html
+fighters/*
