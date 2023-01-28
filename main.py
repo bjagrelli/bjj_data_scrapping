@@ -6,21 +6,22 @@ fighters_folder = 'fighters'
 filename = 'bjj_fighters.html'
 
 def main():
+    
     get_page_html(main_page_url, filename)
 
-    print('>>> Processo iniciado\n\n')
+    print('>>> Beginning of process\n')
 
     soup = main_page_scrapper(filename)
 
-    print('>>> Extraindo dados das páginas dos atletas\n')
+    print('>>> Getting page links for each athlete\n')
     
-    fighters_links = get_fighters_page(soup)
+    fighters_links = get_fighters_page_link(soup)
 
     check_folder(fighters_folder)
 
-    print('>>> Ínicio da carga de dados dos atletas\n')
+    print('>>> Starting data scrapping for each athlete \n')
 
-    fighters_page_scrapper(fighters_links, fighter_page_url, fighters_folder)
+    fighters_page_scrapper_html(fighters_links, fighter_page_url, fighters_folder)
 
 
 if __name__ == '__main__':
