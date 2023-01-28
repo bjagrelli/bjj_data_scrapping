@@ -1,8 +1,7 @@
-Data scrapping from BJJ Heroes for further data analysis on BJJ statistics.
 # BJJ Data Scrapping
 
 
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
+> Data scrapping from BJJ Heroes for further data analysis on BJJ statistics.
 
 ### What's next
 
