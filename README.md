@@ -7,42 +7,28 @@ Data scrapping from BJJ Heroes for further data analysis on BJJ statistics.
 ### What's next
 
 There's still much to be done. But we'll get there.
-- [x] Web scrapping (Extraction)
-- [ ] Transformation/Data cleansing
-- [ ] Data Ingestion
+- [x] Web scrapping (Extract)
+- [ ] Data cleansing (Transform) 
+- [ ] Data Ingestion (Load)
 - [ ] Data Analysis
 - [ ] Data Visualization
 
-## 💻 Pre-requisites
+## 🚀 Running bjj_data_scrapping
 
-Antes de começar, verifique se você atendeu aos seguintes requisitos:
-* Você instalou a versão mais recente de `<linguagem / dependência / requeridos>`
-* Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
-* Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
+Before you run the scripts, make sure you have a virtual environment with the nedeed libraries installed:
 
-## 🚀 Instalando <nome_do_projeto>
-
-Para instalar o <nome_do_projeto>, siga estas etapas:
-
-Linux e macOS:
+Create virtual environment:
 ```
-<comando_de_instalação>
+python -m venv .venv
 ```
 
-Windows:
+Install libraries:
 ```
-<comando_de_instalação>
-```
-
-## ☕ Usando <nome_do_projeto>
-
-Para usar <nome_do_projeto>, siga estas etapas:
-
-```
-<exemplo_de_uso>
+pip install -r requirements.txt
 ```
 
-Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Fornece uma referência de opções para pontos de bônus!
+To download the data from BJJ Heroes, run the command below:
 
-
-[⬆ Back to top](#nome-do-projeto)<br>
+```
+python main.py
+```

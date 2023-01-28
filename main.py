@@ -21,7 +21,7 @@ def main():
 
     print('>>> Starting data scrapping for each athlete \n')
 
-    fighters_page_scrapper_html(fighters_links, fighter_page_url, fighters_folder)
+    get_fighters_page_html(fighters_links, fighter_page_url, fighters_folder)
 
 
 if __name__ == '__main__':

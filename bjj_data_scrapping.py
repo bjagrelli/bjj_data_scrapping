@@ -55,7 +55,7 @@ def get_fighters_page_html(fighters_links, url, folder):
         i += 1
         print(f'>>> Downloading grappler data: {i}/{fighters_links_count}', end='\r')
 
-def fighters_page_scrapper(fighters_links, folder):
+def fighters_page_scrapper_html(fighters_links, folder):
     fighters_list = []
     df_list = []
     for id in fighters_links:
