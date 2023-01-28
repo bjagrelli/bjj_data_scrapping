@@ -2,3 +2,4 @@
 .venv
 bjj_fighters.html
 fighters/*
+__pycache__/*
