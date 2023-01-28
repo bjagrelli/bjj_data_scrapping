@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import os
+from datetime import datetime
 
 def principal_period(s):
     i = (s+s).find(s, 1, -1)
@@ -25,7 +26,7 @@ def main_page_scrapper(filename):
     return soup
 
 
-def get_fighters_page_link(soup):
+def get_fighters_page_link(soup, url):
     fighters_links = []
 
     for link in soup.find_all('a'):
@@ -33,6 +34,8 @@ def get_fighters_page_link(soup):
             fighters_links.append(link.get('href'))
 
     fighters_links = list(set(fighters_links))
+    for idx, link in enumerate(fighters_links):
+        fighters_links[idx] = url.format(link)
             
     return fighters_links
 
@@ -42,6 +45,8 @@ def check_folder(folder):
         os.makedirs(folder)
 
 def get_fighters_page_html(fighters_links, url, folder):
+    t1 = datetime.now()
+
     fighters_links_count = len(fighters_links)
     i = 0
 
@@ -55,6 +60,11 @@ def get_fighters_page_html(fighters_links, url, folder):
         i += 1
         print(f'>>> Downloading grappler data: {i}/{fighters_links_count}', end='\r')
 
+    t2 = datetime.now()
+
+    final_time = t2 - t1
+    
+    print(f'>>> Download took {final_time.seconds} seconds')
 def fighters_page_scrapper_html(fighters_links, folder):
     fighters_list = []
     df_list = []
