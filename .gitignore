@@ -1,5 +1,6 @@
 .ipynb_checkpoints
 .venv
+.ipynb
 bjj_fighters.html
 fighters/*
 __pycache__/*

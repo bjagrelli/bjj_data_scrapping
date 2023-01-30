@@ -12,7 +12,7 @@ def get_page_html(url):
     return data.text
 
 # This function takes in a filename as an argument. The function opens the file and reads the contents. It then creates a BeautifulSoup object from the page using html.parser and returns the soup object. This function can be used to scrape data from webpages for further processing.
-def main_page_scrapper(html):
+def main_page_scraper(html):
     soup = BeautifulSoup(html, "html.parser")
 
     return soup
@@ -31,12 +31,12 @@ def get_fighters_page_link(soup, url):
             
     return fighters_links
 
-def fighters_page_scrapper_html(scrapper_dict, fighters_links):
+def fighters_page_scraper_html(scraper_dict, fighters_links):
     fighters_list = []
     for link in fighters_links:
         id = link.replace('https://www.bjjheroes.com/bjj-fighters/?p=', '')
 
-        raw_html = scrapper_dict[link]['Raw Html']
+        raw_html = scraper_dict[link]['Raw Html']
 
         soup = BeautifulSoup(raw_html, "html.parser")   
 
