@@ -1,28 +1,33 @@
-from bjj_data_scrapping import *
+from functions import *
+from WebScrapper import WebScraper
 
+# Variables
 main_page_url = 'https://www.bjjheroes.com/a-z-bjj-fighters-list'
 fighter_page_url = 'https://www.bjjheroes.com/bjj-fighters{}'
-fighters_folder = 'fighters'
-filename = 'bjj_fighters.html'
 
 def main():
     
-    get_page_html(main_page_url, filename)
+    main_page_html = get_page_html(main_page_url)
 
     print('>>> Beginning of process\n')
 
-    soup = main_page_scrapper(filename)
+    soup = main_page_scrapper(main_page_html)
 
     print('>>> Getting page links for each athlete\n')
     
-    fighters_links = get_fighters_page_link(soup)
+    fighters_links = get_fighters_page_link(soup, fighter_page_url)
 
-    check_folder(fighters_folder)
+    t1 = datetime.now()
+    scrapper = WebScraper(urls = fighters_links)
 
-    print('>>> Starting data scrapping for each athlete \n')
+    print(f'>>> Downloaded completed')
+    print(f'>>> Data scrapping started')
 
-    get_fighters_page_html(fighters_links, fighter_page_url, fighters_folder)
+    fighters_list = fighters_page_scrapper_html(scrapper.master_dict, fighters_links)
 
+    t2 = datetime.now()
+    scrapping_time = t2 - t1
+    print(f'>>> Data scrapping took {scrapping_time.seconds} seconds')
 
 if __name__ == '__main__':
     main()
